@@ -4,6 +4,10 @@ const axios = require("axios");
 const FormData = require("form-data");
 const gauravContext = require("./gaurav-context");
 const { generateInfographic } = require("./infographic");
+const { migrateStories } = require("./migrate-stories");
+
+// Re-export migration function (one-time use, remove after migration)
+exports.migrateStories = migrateStories;
 
 // Lazy-init Firebase Admin and Firestore (avoids deploy-time analysis timeout)
 let db;
@@ -27,7 +31,7 @@ function getTelegramApiUrl() {
 
 const VERTEX_PROJECT = "gauravrajwanshiwebsite";
 const VERTEX_LOCATION = "us-central1";
-const DEFAULT_MODEL = "gemini-3.1-pro"; // Fallback if Remote Config not set
+const DEFAULT_MODEL = "gemini-3.5-flash"; // Latest GA model (June 2026)
 
 // Fetch model name from Firebase Remote Config (change in Firebase console — no redeploy)
 let cachedModel = null;

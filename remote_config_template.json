@@ -2,9 +2,9 @@
   "parameters": {
     "gemini_model": {
       "defaultValue": {
-        "value": "gemini-3.1-pro"
+        "value": "gemini-3.5-flash"
       },
-      "description": "The Vertex AI Gemini model for story & insight generation. Change this value to upgrade the model without redeploying. Examples: gemini-3.1-pro, gemini-3.5-flash"
+      "description": "The Vertex AI Gemini model for story & insight generation. Change this value to upgrade the model without redeploying. Current options: gemini-3.5-flash (latest GA), gemini-2.5-pro (proven stable)"
     }
   }
 }
